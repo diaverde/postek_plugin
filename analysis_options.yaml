@@ -1,0 +1,30 @@
+# Copyright © 2020 - AudiSoft Consulting (https://www.audisoft.com/).
+
+# For lint rules and documentation, see http://dart-lang.github.io/linter/lints.
+
+# Enable all lint rules by default.
+include: all_lint_rules.yaml
+
+# Disable specific rules.
+linter:
+  rules:
+    # Incompatible with rule 'prefer_final_locals'.
+    unnecessary_final: false
+    # Incompatible with rule 'omit_local_variable_types'.
+    always_specify_types: false
+    # Incompatible with rule 'prefer_single_quotes'.
+    prefer_double_quotes: false
+    # Incompatible with rules 'always_use_package_imports' and 
+    # 'avoid_relative_lib_imports'.
+    prefer_relative_imports: false
+analyzer:
+  strong-mode:
+    # Disable this implicits as explained in
+    # https://dash-overflow.net/articles/getting_started/.
+    implicit-casts: false
+    implicit-dynamic: false
+  errors:
+    # Otherwise cause the import of all_lint_rules to warn because of some 
+    # rules conflicts. The conflicts are fixed in this file instead, so we
+    # can safely ignore the warning.
+    included_file_warning: ignore
